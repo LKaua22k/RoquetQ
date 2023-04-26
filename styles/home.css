@@ -1,0 +1,56 @@
+.content{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows:11.4rem 1fr ;
+
+    grid-template-areas: 
+    'header header'
+    'left right';
+}
+
+header{
+    grid-area: header;
+}
+
+#bg{
+    grid-area: left;
+    
+    background: url(/assets/main-img.png) no-repeat top/contain;
+}
+
+main{
+    grid-area: right;
+    display: flex;
+    align-items: center;
+}
+
+main .container{
+    width: min(36.6rem, 100%);
+}
+
+main form{
+    display: flex;
+    gap: 1.4rem;
+    flex-direction: column;
+}
+
+main .title{
+    margin-bottom: 2.4rem;
+}
+
+form input{
+    border: 0.2rem solid var(--grey-blue);
+    padding: 0 1.6rem;
+}
+
+form button{
+    background-color: var(--blue);
+    border: none;
+    color: var(--white);
+}
+
+.btn-outline{
+    padding: 0 1.6rem;
+    height: 5rem;
+}
+
