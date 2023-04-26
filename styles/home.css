@@ -41,6 +41,7 @@ main .title{
 form input{
     border: 0.2rem solid var(--grey-blue);
     padding: 0 1.6rem;
+    color: var(--grey-blue);
 }
 
 form button{
@@ -53,4 +54,3 @@ form button{
     padding: 0 1.6rem;
     height: 5rem;
 }
-

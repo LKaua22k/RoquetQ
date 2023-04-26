@@ -75,7 +75,14 @@ body,button,input,textarea,i{
 }
 
 /* Header */
+.content header{
+    width: 80%;
+    margin: 35px auto;
+}
 
+.content header img{
+    width: 16.7rem;
+}
 
 
 /* Buttons */
@@ -86,8 +93,20 @@ form input,button, .btn-outline{
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    transition: filter 2s;
+    transition: .2s;
     cursor: pointer;
+    outline: none;
+}
+
+form input:focus-within{
+    border: 0.2rem solid var(--blue);
+    color: var(--black);
+
+}
+
+button:hover,.btn-outline:hover{
+    transition: .2s;
+    filter: brightness(1.2);
 }
 
 
@@ -107,5 +126,3 @@ button i{
     font-size: 2rem;
     color: var(--white);
 }
-
-
