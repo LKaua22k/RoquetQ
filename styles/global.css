@@ -37,6 +37,7 @@ a{
 
 /*===  Bases ============================ */
 body{
+    display: flex;
     background: var(--background);
     height: 100vh;
     font-size: 1.6rem;
