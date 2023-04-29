@@ -49,11 +49,10 @@ body{
 }
 
 
-body,button,input,textarea,i{
+body,button,.btn,input,textarea,i{
     font-size: clamp(14px,1.6rem,2vw);
     font-weight: 500;
     font-family: var(--font-DM);
-
 }
 
 .sr-only {
@@ -87,7 +86,7 @@ body,button,input,textarea,i{
 
 
 /* Buttons */
-form input,button, .btn-outline{
+form input,button,.btn,.btn-outline{
     border-radius: .8rem;
     height: 5rem;
     display: flex;
@@ -105,7 +104,7 @@ form input:focus-within{
 
 }
 
-button:hover,.btn-outline:hover{
+button:hover,.btn:hover,.btn-outline:hover{
     transition: .2s;
     filter: brightness(1.2);
 }
