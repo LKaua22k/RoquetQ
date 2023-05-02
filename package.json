@@ -1,16 +1,17 @@
 {
-  "name": "oquetq",
+  "name": "roquetq",
   "version": "1.0.0",
   "description": "Vdc",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "nodemon ."
   },
   "keywords": [],
   "author": "Kauã Araujo",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
   }
 }
