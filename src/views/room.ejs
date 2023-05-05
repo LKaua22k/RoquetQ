@@ -34,7 +34,7 @@
         <img src="./assets/Logo.svg" alt="Logo Roquet.q" srcset="">
         
         <div class="buttons">
-            <a href="#" class="btn-outline">#323243<i class="icon-copy"></i></a>
+            <a href="#" class="btn-outline" id="room-id" data-id="323243">#323243<i class="icon-copy"></i></a>
             <a href="#" class="btn"><i class="icon-users"></i>Criar sala</a>
         </div>
     </header>
@@ -68,8 +68,8 @@
                 </div>
 
                 <div class="actions">
-                    <a href="#" class="check"><i class="icon-check"></i>Marcar como lida</a>
-                    <a href="#" class="trash"><i class="icon-trash"></i>Excluir</a>
+                    <a href="#" class="check" data-id="1"><i class="icon-check"></i>Marcar como lida</a>
+                    <a href="#" class="trash" data-id="1"><i class="icon-trash"></i>Excluir</a>
                 </div>
             </div>
         </section>
@@ -82,7 +82,7 @@
         <h2 class="title">Excluir pergunta</h2>
         <p>Tem certeza que você deseja excluir esta pergunta?</p>
         
-        <form action="">
+        <form action="" method="post">
             <label for="" class="sr-only">Digite sua senha</label>
             <input type="password" name="password" placeholder="Digite sua senha">
         

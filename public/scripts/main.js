@@ -13,13 +13,21 @@ btnChecks.forEach(button => {
 })
 
 
-const deletebutton = documenst.querySelectorAll('.actions a.trash')
+const deletebutton = document.querySelectorAll('.actions a.trash')
 
 deletebutton.forEach(button => {
     button.addEventListener('click', (event) => handleClick(event,false))
 })
 
 function handleClick(event, check = true){
+    event.preventDefault()
+
+    const slug = check ? "check" : "delete"
+    const roomId = document.querySelector("#room-id").dataset.id
+    const questionId = event.target.dataset.id
+
+    const form = document.querySelector(".modal form")
+    form.setAttribute("action", `/room/${roomId}/${questionId}/${slug}`)
 
     modalTitle.innerHTML = check ? 'Marcar como lida' : 'Excluir'
     modalText.innerHTML = check ? 'tem certeza que deseja marcar como lida?' : 'Tem certeza que você deseja excluir esta pergunta?'

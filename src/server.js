@@ -17,6 +17,8 @@ server.use(express.static('public'))
 // Aqui estou pegando a pasta views
 server.set('views', path.join(__dirname, 'views'))
 
+server.use(express.urlencoded({extended:true}))
+
 // Dizendo para o server usar as rotas
 server.use(routes)
 
