@@ -1,8 +1,9 @@
 module.exports = {
     
-    index(req, res){
+    teste(req , res){
+        
         const roomId = req.params.room
-        const questionId = req.params.quest
+        const questionId = req.params.question
         const action = req.params.action
         const password = req.body.password
 
