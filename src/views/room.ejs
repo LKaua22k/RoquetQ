@@ -36,7 +36,7 @@
         </a>
         
         <div class="buttons">
-            <a href="#" class="btn-outline" id="room-id" data-id="323243">#323243<i class="icon-copy"></i></a>
+            <a href="#" class="btn-outline" id="room-id" data-id="<%= roomId %>">#<%= roomId %><i class="icon-copy"></i></a>
             <a href="#" class="btn"><i class="icon-users"></i>Criar sala</a>
         </div>
     </header>
@@ -44,7 +44,7 @@
     <main>
         <section id="question-form">
             <h2 class="title">Faça uma pergunta</h2>
-            <form action="#">
+            <form action="/question/create/<%= roomId %>" method="POST">
                 <label class="sr-only">O que você quer perguntar?</label>
                 <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
             
@@ -61,21 +61,25 @@
 
         <section id="questions">
             <label class="sr-only">Perguntas da comunidade</label>
-            <div class="question-wrapper">
-                <div class="quests">
-                    <div class="user">
-                        <i class="icon-user"></i>
+
+            <% questions.forEach(question => { %>
+                <div class="question-wrapper">
+                    <div class="quests">
+                        <div class="user">
+                            <i class="icon-user"></i>
+                        </div>
+                            <p><%= question.title %></p>
                     </div>
-                        <p>O que é JavaScript?</p>
+    
+                    <div class="actions">
+                        <a href="#" class="check" data-id="1"><i class="icon-check"></i>Marcar como lida</a>
+                        <a href="#" class="trash" data-id="1"><i class="icon-trash"></i>Excluir</a>
+                    </div>
                 </div>
+            <%}); %>
+            
 
-                <div class="actions">
-                    <a href="#" class="check" data-id="1"><i class="icon-check"></i>Marcar como lida</a>
-                    <a href="#" class="trash" data-id="1"><i class="icon-trash"></i>Excluir</a>
-                </div>
-            </div>
-
-            <div class="question-wrapper">
+            <div class="question-wrapper read">
                 <div class="quests">
                     <div class="user">
                         <i class="icon-user"></i>
