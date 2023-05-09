@@ -72,26 +72,29 @@
                     </div>
     
                     <div class="actions">
-                        <a href="#" class="check" data-id="1"><i class="icon-check"></i>Marcar como lida</a>
-                        <a href="#" class="trash" data-id="1"><i class="icon-trash"></i>Excluir</a>
+                        <a href="#" class="check" data-id="<%= question.id %>"><i class="icon-check"></i>Marcar como lida</a>
+                        <a href="#" class="trash" data-id="<%= question.id %>"><i class="icon-trash"></i>Excluir</a>
                     </div>
                 </div>
             <%}); %>
             
+            <% questionsRead.forEach(questionRead => { %>
 
-            <div class="question-wrapper read">
-                <div class="quests">
-                    <div class="user">
-                        <i class="icon-user"></i>
+                <div class="question-wrapper read">
+                    <div class="quests">
+                        <div class="user">
+                            <i class="icon-user"></i>
+                        </div>
+                            <p><%= questionRead.title %></p>
                     </div>
-                        <p>O que é JavaScript?</p>
+    
+                    <div class="actions">
+                        <a href="#" class="trash" data-id="<%= questionRead.id %>"><i class="icon-trash"></i>Excluir</a>
+                    </div>
                 </div>
+                
+            <%});%>    
 
-                <div class="actions">
-                    <a href="#" class="check" data-id="2"><i class="icon-check"></i>Marcar como lida</a>
-                    <a href="#" class="trash" data-id="2"><i class="icon-trash"></i>Excluir</a>
-                </div>
-            </div>
         </section>
     </main>
 </div>
@@ -107,8 +110,8 @@
             <input type="password" name="password" placeholder="Digite sua senha">
         
             <div class="buttons">
-                <a href="#" class="btn cancel">Cancelar</a>
-                <button href="#" class="red">Sim, excluir</button>
+                <a href="" class="btn cancel">Cancelar</a>
+                <button href="" class="red">Sim, excluir</button>
             </div>
         </form>
     </div>

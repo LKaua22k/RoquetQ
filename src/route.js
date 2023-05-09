@@ -12,7 +12,7 @@ route.post('/create-room', RoomController.create)
 route.get('/room/:room', RoomController.open)
 
 route.post('/question/create/:room', QuestionController.create)
-route.post('/question/:room/:question:/:action', QuestionController.teste)
+route.post('/question/:room/:question/:action', QuestionController.index)
 
 
 // Exportando Route

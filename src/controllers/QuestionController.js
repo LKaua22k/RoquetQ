@@ -2,14 +2,14 @@ const Database = require('../db/config')
 
 module.exports = {
     
-    teste(req , res){
+    index(req , res){
         
         const roomId = req.params.room
-        const questionId = req.params.question
+        const questionsId = req.params.question
         const action = req.params.action
         const password = req.body.password
 
-        console.log(`room = ${roomId}, questionId = ${questionId}
+        console.log(`room = ${roomId}, questionId = ${questionsId}
         action = ${action}, password = ${password}`)
     },
     
@@ -19,10 +19,6 @@ module.exports = {
         const roomId = req.params.room
 
         await db.all(`INSERT INTO questions (title,room,read) VALUES("${question}", ${roomId} , 0)`)
-
-        questions.forEach(question => {
-            
-        });
 
         res.redirect(`/room/${roomId}`)
     }
