@@ -2,15 +2,29 @@ const Database = require('../db/config')
 
 module.exports = {
     
-    index(req , res){
+    async index(req , res){
         
+        const db = await Database()
         const roomId = req.params.room
         const questionsId = req.params.question
         const action = req.params.action
         const password = req.body.password
 
-        console.log(`room = ${roomId}, questionId = ${questionsId}
-        action = ${action}, password = ${password}`)
+        // Verificar se a senha esta correta
+        const Vroom = await db.get(`SELECT * FROM rooms WHERE id = ${roomId}`)
+        if (Vroom.pass == password) {
+            if (action == "delete") {
+                // Deletando a question no bd
+                await db.run(`DELETE FROM questions WHERE id = ${questionsId}`)
+            }else if (action == "check") {
+                // Verificando se a questão foi lida
+                await db.run(`UPDATE questions SET read = 1 WHERE id = ${questionsId}`)
+            }
+            res.redirect(`/room/${roomId}`)
+        }else {
+            // Quando a senha for incoreta
+            res.render('passincorrect', {roomId: roomId})
+        }
     },
     
     async create(req, res){
