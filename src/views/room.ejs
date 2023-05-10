@@ -62,6 +62,12 @@
         <section id="questions">
             <label class="sr-only">Perguntas da comunidade</label>
 
+            <% if(!isNotQuestion){ %>
+
+                <%- include('parts/noquestion') %>
+
+            <% } %>
+
             <% questions.forEach(question => { %>
                 <div class="question-wrapper">
                     <div class="quests">
