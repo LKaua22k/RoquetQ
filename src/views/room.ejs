@@ -62,7 +62,8 @@
         <section id="questions">
             <label class="sr-only">Perguntas da comunidade</label>
 
-            <% if(!isNotQuestion){ %>
+            <!-- Qunado a pagina estã sem perrguntas -->
+            <% if(isNotQuestion){ %>
 
                 <%- include('parts/noquestion') %>
 

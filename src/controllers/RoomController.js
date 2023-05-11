@@ -4,15 +4,24 @@ module.exports = {
     async create(req , res){
         
         const db = await Database()
-        let roomId 
         const pass = req.body.password
+        let roomId 
+        let isRoom = true
 
-        for (let i = 0; i < 6; i++) {
-            i === 0 ? roomId = Math.floor(Math.random() * 10).toString() :
-            roomId += Math.floor(Math.random() * 10).toString()
+        while(isRoom){
+            // Gerar o numero da sala
+            for (let i = 0; i < 6; i++) {
+                i === 0 ? roomId = Math.floor(Math.random() * 10).toString() :
+                roomId += Math.floor(Math.random() * 10).toString()
+            }
+            // Verificar se esse numero ja existe no BD
+            const roomExistids = await db.all(`SELECT id FROM rooms`)
+            isRoom = roomExistids.some(roomExistids => roomExistids == roomId)
+            if(!isRoom){
+                    // Inserir a sala no banco
+                    await db.run(`INSERT INTO rooms (id, pass) VALUES(${parseInt(roomId)}, ${pass})`)            
+            }
         }
-
-        await db.run(`INSERT INTO rooms (id, pass) VALUES(${parseInt(roomId)}, ${pass})`)
 
         await db.close()
 
@@ -26,10 +35,10 @@ module.exports = {
         const questionsRead = await db.all(`SELECT * FROM questions WHERE room = ${roomId} and read = 1`)
         let isNotQuestion
 
-        if(isNotQuestion){
-            if(questions.length == 0){
-            }else if(questionsRead == 0){
-                isNotQuestion = false
+        // Quando a sala não tem perguntas
+        if(questions.length == 0){
+            if(questionsRead.length == 0){
+                isNotQuestion = true
             }
         }
         
