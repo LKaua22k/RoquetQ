@@ -6,6 +6,8 @@
     grid-template-areas: 
     'header header'
     'left right';
+
+
 }
 
 header{
@@ -97,4 +99,36 @@ form button{
     height: 21.2rem;
     right: 5.6rem;
     bottom: -15rem;
+  }
+
+  @media(max-width: 938px){
+      .content{
+        grid-template-areas: 
+        'header header'
+        'right right';
+
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+      }
+
+      header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      main{
+        justify-content: center;
+        margin-top: -20rem;
+      }
+
+      #bg{
+          visibility: hidden;
+          opacity: 0;
+      }
+
+      .ball.top{
+        width: 55.3rem;
+      }
+
   }

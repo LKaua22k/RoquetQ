@@ -1,5 +1,7 @@
 .content{
     max-width: 1120px;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
 }
 
 #room header{
@@ -167,4 +169,31 @@
     line-height: 1.9rem;
     color: var(--grey-dark);
     margin-top: 1rem;
+}
+@media(max-width: 700px){
+    .content{
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
+
+    #room header{
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    :root{
+        font-size: 50.5%;
+    }
+}
+
+/* small devices: 460 > */
+@media(max-width: 460px){
+    #room header{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    :root{
+        font-size: 50.5%;
+    }
 }
